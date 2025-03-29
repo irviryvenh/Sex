@@ -1,0 +1,23 @@
+import os
+import requests
+from bs4 import BeautifulSoup
+url = 'https://rule34.world/mnemosynekoto'
+output_dir = 'images'
+if not os.path.exists(images):
+    os.makedirs(images)
+response = requests.get(https://rule34.world/mnemosynekoto)
+soup = BeautifulSoup(response.content, 'html.parser')
+img_tags = soup.find_all('img')
+for img in img_tags:
+    img_url = img.get('src')
+    if img_url:
+        try:
+            img_data = requests.get(images_https://rule34.world/mnemosynekoto).content
+            img_name = os.path.join(output_dir, os.path.basename(images_https://rule34.world/mnemosynekoto))
+            with open(images, 'wb') as handler:
+                handler.write(img_data)
+            print(f'Imagen guardada: {images}')
+        except Exception as e:
+            print(f'Error al descargar {images_https://rule34.world/mnemosynekoto}: {e}')
+
+print('Descarga completa.')
